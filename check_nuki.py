@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# Read-only Nuki Bridge battery, health, cloud and Bluetooth checks.
+# Author: Stijn Jonker (sjcjonker) | https://github.com/sjcjonker
+# Usage: python3 check_nuki.py --host 192.0.2.10 --token-file /private/nuki.token --nuki-id 123 --mode health
+# Required: bridge, lock ID and credentials; default port: 8080. Help: --help.
+# Nagios exit codes: 0 OK, 1 WARNING, 2 CRITICAL, 3 UNKNOWN.
 """Read-only Nuki Bridge checks using encrypted token authentication."""
 from __future__ import annotations
 
