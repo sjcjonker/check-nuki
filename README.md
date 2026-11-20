@@ -81,7 +81,7 @@ This example assumes the installed script is at `/usr/local/lib/nagios/plugins/c
 ```text
 define command {
     command_name    check_nuki
-    command_line    /usr/local/lib/nagios/plugins/check_nuki.py --host $HOSTADDRESS$ --port 8080 --nuki-id $ARG1$ --mode $ARG2$
+    command_line    /usr/local/lib/nagios/plugins/check_nuki.py --host $HOSTADDRESS$ --port 8080 --nuki-id $ARG1$ --mode $ARG2$ --token-file /etc/nagios4/private/nuki/token
 }
 
 define service {
@@ -92,7 +92,9 @@ define service {
 }
 ```
 
-This requires an existing `nuki-bridge` host definition and `generic-service` template. Adjust paths and arguments to your Nagios installation.
+Provision the protected token file described above. This example uses one Bridge;
+use a separate protected token path per Bridge when adding others.
+It requires an existing `nuki-bridge` host definition and `generic-service` template. Adjust paths and arguments to your Nagios installation.
 
 ## Concurrent checks
 
